@@ -6,16 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
 import { SuccessComponent } from './success/success.component';
 import { HomeComponent } from './home/home.component';
+import { ExpiredTrialComponent } from './expired-trial/expired-trial.component';
+import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
+import { SupportComponent } from './support/support.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent,
     SuccessComponent,
     HomeComponent,
+    ExpiredTrialComponent,
+    SubscriptionPlansComponent,
+    SupportComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +32,3 @@ import { HomeComponent } from './home/home.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-
-
- 
-

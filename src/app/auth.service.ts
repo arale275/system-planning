@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { OAuthService, AuthConfig } from 'angular-oauth2-oidc';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private oauthService: OAuthService, private router: Router) {
+  constructor(
+    private oauthService: OAuthService,
+    private router: Router,
+    private http: HttpClient
+  ) {
     this.configureOAuth();
   }
 
@@ -31,11 +37,11 @@ export class AuthService {
     this.oauthService.initLoginFlow();
   }
 
-  loginWithFacebook(): void {
-    this.oauthService.initLoginFlow('facebook'); // Add this line
-  }
-
   isAuthenticated(): boolean {
     return this.oauthService.hasValidAccessToken();
+  }
+
+  getTrialExpirationDate(): Observable<any> {
+    return this.http.get('/auth/trial-status');
   }
 }

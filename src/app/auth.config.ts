@@ -9,13 +9,7 @@ export const authConfig: AuthConfig = {
   scope: 'openid profile email',
 };
 
-export const authConfigFacebook: AuthConfig = {
-  clientId: '24015666154714335',
-  redirectUri: window.location.origin + '/success', 
-  scope: 'email',
-  responseType: 'code',
-  strictDiscoveryDocumentValidation: false,
-};
+
 
 
 
