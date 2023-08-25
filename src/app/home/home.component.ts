@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   loginWithGoogle(): void {
+    console.log('Logging in with Google...');
     this.authService.loginWithGoogle();
   }
-  
 }
-  
-
-
